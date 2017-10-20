@@ -14,6 +14,8 @@
 		1F6F02031F9AA43E00A3824C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F6F02011F9AA43E00A3824C /* LaunchScreen.storyboard */; };
 		1F6F020E1F9AA43F00A3824C /* UBERTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6F020D1F9AA43F00A3824C /* UBERTests.swift */; };
 		1F6F02191F9AA43F00A3824C /* UBERUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6F02181F9AA43F00A3824C /* UBERUITests.swift */; };
+		1F85EBA31F9AA56000427AE7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F85EBA21F9AA56000427AE7 /* LoginViewController.swift */; };
+		1F85EBA51F9AA75B00427AE7 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F85EBA41F9AA75B00427AE7 /* Colors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		1F6F02141F9AA43F00A3824C /* UBERUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UBERUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F6F02181F9AA43F00A3824C /* UBERUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UBERUITests.swift; sourceTree = "<group>"; };
 		1F6F021A1F9AA43F00A3824C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F85EBA21F9AA56000427AE7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		1F85EBA41F9AA75B00427AE7 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +101,15 @@
 		1F6F01F71F9AA43E00A3824C /* UBER */ = {
 			isa = PBXGroup;
 			children = (
+				1F85EBA61F9AB02100427AE7 /* Login */,
+				1F85EBA71F9AB03100427AE7 /* SignUp */,
 				1F6F01F81F9AA43E00A3824C /* AppDelegate.swift */,
 				1F6F01FA1F9AA43E00A3824C /* ViewController.swift */,
 				1F6F01FC1F9AA43E00A3824C /* Main.storyboard */,
 				1F6F01FF1F9AA43E00A3824C /* Assets.xcassets */,
 				1F6F02011F9AA43E00A3824C /* LaunchScreen.storyboard */,
 				1F6F02041F9AA43E00A3824C /* Info.plist */,
+				1F85EBA41F9AA75B00427AE7 /* Colors.swift */,
 			);
 			path = UBER;
 			sourceTree = "<group>";
@@ -123,6 +130,21 @@
 				1F6F021A1F9AA43F00A3824C /* Info.plist */,
 			);
 			path = UBERUITests;
+			sourceTree = "<group>";
+		};
+		1F85EBA61F9AB02100427AE7 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				1F85EBA21F9AA56000427AE7 /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		1F85EBA71F9AB03100427AE7 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SignUp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +281,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F85EBA31F9AA56000427AE7 /* LoginViewController.swift in Sources */,
+				1F85EBA51F9AA75B00427AE7 /* Colors.swift in Sources */,
 				1F6F01FB1F9AA43E00A3824C /* ViewController.swift in Sources */,
 				1F6F01F91F9AA43E00A3824C /* AppDelegate.swift in Sources */,
 			);
