@@ -19,6 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         IQKeyboardManager.shared().isEnabled = true
         
+        UITabBar.appearance().barTintColor = Colors.getDarkBlue()
+        UITabBar.appearance().tintColor = .white
+        
         UINavigationBar.appearance().backgroundColor = Colors.getDarkBlue()
         UINavigationBar.appearance().tintColor = UIColor.white
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]

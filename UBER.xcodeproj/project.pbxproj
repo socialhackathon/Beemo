@@ -16,6 +16,7 @@
 		1F6F02191F9AA43F00A3824C /* UBERUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6F02181F9AA43F00A3824C /* UBERUITests.swift */; };
 		1F85EBA31F9AA56000427AE7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F85EBA21F9AA56000427AE7 /* LoginViewController.swift */; };
 		1F85EBA51F9AA75B00427AE7 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F85EBA41F9AA75B00427AE7 /* Colors.swift */; };
+		1F98931C1F9AB9E900DBC5CF /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F98931B1F9AB9E900DBC5CF /* SignUpViewController.swift */; };
 		DADBF18E19F3C1DCEB898762 /* Pods_UBER.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DFF8C6E6B6E818A0FBA1665 /* Pods_UBER.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,7 @@
 		1F6F021A1F9AA43F00A3824C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F85EBA21F9AA56000427AE7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1F85EBA41F9AA75B00427AE7 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		1F98931B1F9AB9E900DBC5CF /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		6DFF8C6E6B6E818A0FBA1665 /* Pods_UBER.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UBER.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7C68CB4C920EFEF895B3A5D /* Pods-UBER.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UBER.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UBER/Pods-UBER.debug.xcconfig"; sourceTree = "<group>"; };
 		E36DDB8C080F55EC118FB966 /* Pods-UBER.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UBER.release.xcconfig"; path = "Pods/Target Support Files/Pods-UBER/Pods-UBER.release.xcconfig"; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				1F85EBA61F9AB02100427AE7 /* Login */,
+				1F98931A1F9AB9CC00DBC5CF /* SignUp */,
 				1F6F01F81F9AA43E00A3824C /* AppDelegate.swift */,
 				1F6F01FA1F9AA43E00A3824C /* ViewController.swift */,
 				1F6F01FC1F9AA43E00A3824C /* Main.storyboard */,
@@ -144,6 +147,14 @@
 				1F85EBA21F9AA56000427AE7 /* LoginViewController.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		1F98931A1F9AB9CC00DBC5CF /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				1F98931B1F9AB9E900DBC5CF /* SignUpViewController.swift */,
+			);
+			path = SignUp;
 			sourceTree = "<group>";
 		};
 		4B380DC3C34C6854D3EFCF42 /* Frameworks */ = {
@@ -338,7 +349,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -352,6 +363,7 @@
 				1F85EBA51F9AA75B00427AE7 /* Colors.swift in Sources */,
 				1F6F01FB1F9AA43E00A3824C /* ViewController.swift in Sources */,
 				1F6F01F91F9AA43E00A3824C /* AppDelegate.swift in Sources */,
+				1F98931C1F9AB9E900DBC5CF /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -519,8 +531,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = U5DCDBG2W2;
+				DEVELOPMENT_TEAM = 4459UQ4UL2;
 				INFOPLIST_FILE = UBER/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.NeoBis.UBER;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -535,8 +548,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = U5DCDBG2W2;
+				DEVELOPMENT_TEAM = 4459UQ4UL2;
 				INFOPLIST_FILE = UBER/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.NeoBis.UBER;
 				PRODUCT_NAME = "$(TARGET_NAME)";

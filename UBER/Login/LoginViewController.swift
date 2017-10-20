@@ -14,15 +14,16 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
 
         self.title = "Вход"
+        navigationController?.navigationBar.isTranslucent = false
     }
     @IBAction func showRegistration(_ sender: UIButton) {
         let sb = UIStoryboard(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: "RegistrationViewControoler")
+        let vc = sb.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
         navigationController?.pushViewController(vc, animated: true)
     }
     @IBAction func showMain(_ sender: UIButton) {
         let sb = UIStoryboard(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+        let vc = sb.instantiateViewController(withIdentifier: "Main")
         navigationController?.present(vc, animated: true, completion: nil)
     }
 }
