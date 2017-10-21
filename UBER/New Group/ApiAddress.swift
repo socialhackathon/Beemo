@@ -9,11 +9,11 @@
 import Foundation
 import Alamofire
 
-class ApiAddressKant: ApiAddress {
+class ApiAddressUber: ApiAddress {
     
     init(endpoint: String) {
         super.init()
-        self.domain = "139.59.22.220:8000"
+        self.domain = "165.227.49.83:8000"
         self.endpoint = endpoint
         self.param = getStringFrom(parameter: nil)
     }

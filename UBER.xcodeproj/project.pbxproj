@@ -118,6 +118,7 @@
 		1F6F01F71F9AA43E00A3824C /* UBER */ = {
 			isa = PBXGroup;
 			children = (
+				84161A0E1F9AE274000AFC9E /* Model */,
 				84161A031F9ADE7D000AFC9E /* Supporting Files */,
 				1F85EBA61F9AB02100427AE7 /* Login */,
 				1F98931A1F9AB9CC00DBC5CF /* SignUp */,
@@ -184,6 +185,13 @@
 			);
 			name = "Supporting Files";
 			path = "New Group";
+			sourceTree = "<group>";
+		};
+		84161A0E1F9AE274000AFC9E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		8BC290C9025FD91E2A954D13 /* Pods */ = {
