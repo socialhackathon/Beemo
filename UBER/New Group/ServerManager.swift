@@ -22,24 +22,20 @@ class ServerManager: HTTPRequestManager  {
     
     func addUser(login: Login, completion: @escaping () -> Void, error: @escaping (String) -> Void) {
         let param = login.toDict()
-            post(api: "profile",parameters: param, completion: { (json) in completion()
+            post(api: "profile/",parameters: param, completion: { (json) in completion()
             }, error: error)
     }
     
-    func login(login: String, password: String, completion: @escaping (Int)-> Void,error: @escaping (String)-> Void) {
-        var token = ""
-        self.post(api: "login", parameters: ["username": login, "password": password], completion: { (json) in
-            token = json["token"].stringValue
-            let parameter = ["key": token]
-            self.post(api: "user_id", parameters: parameter, completion: { json in
-                let user_id = json["user_id"].intValue
-                UserDefaults.standard.set(user_id, forKey: "user_id")
-                completion(user_id)
-            }, error: error)
-        }, error: error)
-        if token != "" {
+    func login(login: String, password: String, completion: @escaping ()-> Void,error: @escaping (String)-> Void) {
+        
+        self.post(api: "login/", parameters: ["username": login, "password": password], completion: { (json) in
+            var token = json["token"].stringValue
             UserDefaults.standard.set(token, forKey: "token")
-        }
+            completion()
+            //let parameter = ["key": token]
+
+        }, error: error)
+      
     }
     
     
