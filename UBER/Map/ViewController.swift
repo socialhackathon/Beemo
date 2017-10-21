@@ -26,6 +26,8 @@ class ViewController: UIViewController, GMSMapViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = "Карта"
 
         setupGoogleMap()
         addResetButton()
@@ -40,6 +42,7 @@ class ViewController: UIViewController, GMSMapViewDelegate {
     @IBAction func dismissTime(_ sender: UIButton) {
         hideTimeView()
     }
+    
     func setupGoogleMap() {
         let camera = GMSCameraPosition.camera(withLatitude: 42.8706253, longitude: 74.5724552, zoom: 15)
         map = GMSMapView.map(withFrame: self.mapView.frame, camera: camera)

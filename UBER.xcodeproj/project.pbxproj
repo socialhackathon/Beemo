@@ -18,6 +18,11 @@
 		1F85EBA51F9AA75B00427AE7 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F85EBA41F9AA75B00427AE7 /* Colors.swift */; };
 		1F98931C1F9AB9E900DBC5CF /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F98931B1F9AB9E900DBC5CF /* SignUpViewController.swift */; };
 		1FBCC1E31F9B15E400BFC105 /* Pods_UBER.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DFF8C6E6B6E818A0FBA1665 /* Pods_UBER.framework */; };
+		1FBCC1E41F9B620200BFC105 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84161A0F1F9AECD3000AFC9E /* Login.swift */; };
+		1FBCC1E51F9B620200BFC105 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E7D1EE1F9B141D001A6608 /* Alert.swift */; };
+		1FBCC1E61F9B620200BFC105 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E7D1F01F9B1FF1001A6608 /* DataManager.swift */; };
+		1FBCC1E91F9B664100BFC105 /* GeneralMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBCC1E81F9B664100BFC105 /* GeneralMapViewController.swift */; };
+		1FBCC1EC1F9B6F2800BFC105 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBCC1EB1F9B6F2500BFC105 /* ProfileViewController.swift */; };
 		84161A051F9ADF09000AFC9E /* HTTPRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84161A041F9ADF09000AFC9E /* HTTPRequestManager.swift */; };
 		84161A071F9ADF4E000AFC9E /* HTTPStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84161A061F9ADF4E000AFC9E /* HTTPStatusCode.swift */; };
 		84161A091F9ADF9B000AFC9E /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84161A081F9ADF9B000AFC9E /* ServerManager.swift */; };
@@ -58,6 +63,8 @@
 		1F85EBA41F9AA75B00427AE7 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		1F98931B1F9AB9E900DBC5CF /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		1FBCC1E11F9B0ED500BFC105 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		1FBCC1E81F9B664100BFC105 /* GeneralMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralMapViewController.swift; sourceTree = "<group>"; };
+		1FBCC1EB1F9B6F2500BFC105 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		6DFF8C6E6B6E818A0FBA1665 /* Pods_UBER.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UBER.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84161A041F9ADF09000AFC9E /* HTTPRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequestManager.swift; sourceTree = "<group>"; };
 		84161A061F9ADF4E000AFC9E /* HTTPStatusCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPStatusCode.swift; sourceTree = "<group>"; };
@@ -124,7 +131,9 @@
 				84161A031F9ADE7D000AFC9E /* Supporting Files */,
 				1F85EBA61F9AB02100427AE7 /* Login */,
 				1F98931A1F9AB9CC00DBC5CF /* SignUp */,
+				1FBCC1EA1F9B6ED200BFC105 /* Profile */,
 				1FAB61021F9AECE700080C4D /* Map */,
+				1FBCC1E71F9B661100BFC105 /* GeneralMap */,
 				1F6F01F81F9AA43E00A3824C /* AppDelegate.swift */,
 				1F6F01FC1F9AA43E00A3824C /* Main.storyboard */,
 				1F6F01FF1F9AA43E00A3824C /* Assets.xcassets */,
@@ -174,6 +183,22 @@
 				1F6F01FA1F9AA43E00A3824C /* ViewController.swift */,
 			);
 			path = Map;
+			sourceTree = "<group>";
+		};
+		1FBCC1E71F9B661100BFC105 /* GeneralMap */ = {
+			isa = PBXGroup;
+			children = (
+				1FBCC1E81F9B664100BFC105 /* GeneralMapViewController.swift */,
+			);
+			path = GeneralMap;
+			sourceTree = "<group>";
+		};
+		1FBCC1EA1F9B6ED200BFC105 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				1FBCC1EB1F9B6F2500BFC105 /* ProfileViewController.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		4B380DC3C34C6854D3EFCF42 /* Frameworks */ = {
@@ -391,7 +416,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -401,16 +426,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FBCC1E41F9B620200BFC105 /* Login.swift in Sources */,
+				1FBCC1E51F9B620200BFC105 /* Alert.swift in Sources */,
+				1FBCC1E61F9B620200BFC105 /* DataManager.swift in Sources */,
 				84161A091F9ADF9B000AFC9E /* ServerManager.swift in Sources */,
+				1FBCC1E91F9B664100BFC105 /* GeneralMapViewController.swift in Sources */,
 				1F85EBA31F9AA56000427AE7 /* LoginViewController.swift in Sources */,
 				1F85EBA51F9AA75B00427AE7 /* Colors.swift in Sources */,
 				1F6F01FB1F9AA43E00A3824C /* ViewController.swift in Sources */,
 				1F6F01F91F9AA43E00A3824C /* AppDelegate.swift in Sources */,
 				1F98931C1F9AB9E900DBC5CF /* SignUpViewController.swift in Sources */,
-				84161A101F9AECD3000AFC9E /* Login.swift in Sources */,
+				1FBCC1EC1F9B6F2800BFC105 /* ProfileViewController.swift in Sources */,
 				84161A051F9ADF09000AFC9E /* HTTPRequestManager.swift in Sources */,
-				84E7D1F11F9B1FF1001A6608 /* DataManager.swift in Sources */,
-				84E7D1EF1F9B141D001A6608 /* Alert.swift in Sources */,
 				84161A071F9ADF4E000AFC9E /* HTTPStatusCode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -22,8 +22,8 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.topItem?.title = ""
-        self.title = NSLocalizedString("Регистрация", comment: "Регистрация")
+
+        self.title = "Регистрация"
         setupPickerView()
     }
     
