@@ -11,6 +11,7 @@ import UIKit
 class SignUpViewController: UIViewController {
     
     @IBOutlet weak var sexTextField: UITextField!
+    
     let sex = ["М" , "Ж"]
     var selected: String!
     
