@@ -6,5 +6,6 @@ target 'UBER' do
   pod 'SwiftyJSON'
   pod 'Alamofire', '~> 4.4'
   pod 'IQKeyboardManager'
-
+  pod 'GoogleMaps'
+  pod 'GooglePlaces'
 end

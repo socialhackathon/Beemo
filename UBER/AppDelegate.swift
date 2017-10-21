@@ -8,16 +8,21 @@
 
 import UIKit
 import IQKeyboardManager
+import GoogleMaps
+import GooglePlaces
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    let googleAPI = "AIzaSyB-LRGSFFMZMeBUgB7Km4RQ7UT7Z0b3aD4"
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         IQKeyboardManager.shared().isEnabled = true
+        
+        GMSServices.provideAPIKey(googleAPI)
+        GMSPlacesClient.provideAPIKey(googleAPI)
         
         UITabBar.appearance().barTintColor = Colors.getDarkBlue()
         UITabBar.appearance().tintColor = .white
