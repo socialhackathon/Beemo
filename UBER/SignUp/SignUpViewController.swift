@@ -34,8 +34,8 @@ class SignUpViewController: UIViewController {
         if passwordTextField.text! != passwordRepeatTextField.text! {
             showErrorAlert(message: "Пароли не совпадают!")
         }
-        else if passwordTextField.text!.count < 4 {
-            showErrorAlert(message: "Пароль должен состоять из 4 и более символов!")
+        else if passwordTextField.text!.count < 8 {
+            showErrorAlert(message: "Пароль должен состоять из 8 и более символов!")
         }
         else if (phoneNumberTextField.text?.count)! < 10 {
             showErrorAlert(message: "Введите правильный номер телефона!")
