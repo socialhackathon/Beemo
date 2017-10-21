@@ -8,4 +8,5 @@ target 'UBER' do
   pod 'IQKeyboardManager'
   pod 'GoogleMaps'
   pod 'GooglePlaces'
+  pod 'KRProgressHUD'
 end

@@ -5,7 +5,7 @@
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -101,6 +101,10 @@
                         <viewLayoutGuide key="safeArea" id="XDh-wG-1GE"/>
                     </view>
                     <navigationItem key="navigationItem" id="69b-Wu-dkd"/>
+                    <connections>
+                        <outlet property="loginTextField" destination="040-xX-XN2" id="340-Or-1WE"/>
+                        <outlet property="passwordTextField" destination="uQC-jN-Dwv" id="Ok6-Fa-gS2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EvX-jx-hme" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -130,7 +134,7 @@
                                 <rect key="frame" x="32" y="188" width="311" height="15"/>
                                 <color key="textColor" red="0.65394089960000001" green="0.65222869679999995" blue="0.68213661520000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WKk-Tb-cMk">
                                 <rect key="frame" x="32" y="252" width="311" height="15"/>
@@ -208,6 +212,9 @@
                                         <integer key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="saveButton:" destination="ggg-nJ-P5b" eventType="touchUpInside" id="ZXu-6I-cZn"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -254,6 +261,11 @@
                         <viewLayoutGuide key="safeArea" id="4jv-5J-Nru"/>
                     </view>
                     <connections>
+                        <outlet property="lastNameTextField" destination="mLI-La-VfY" id="PjL-YP-tcH"/>
+                        <outlet property="nameTextField" destination="0Sq-o9-lC6" id="dOe-F5-d4B"/>
+                        <outlet property="passwordRepeatTextField" destination="7Fr-ok-LPL" id="Vcl-Gp-ZPy"/>
+                        <outlet property="passwordTextField" destination="WKk-Tb-cMk" id="GOV-RY-7e7"/>
+                        <outlet property="phoneNumberTextField" destination="Alw-O5-jCB" id="ADM-lV-uOV"/>
                         <outlet property="sexTextField" destination="GjT-ws-Bsl" id="YAX-XJ-Bn1"/>
                     </connections>
                 </viewController>
