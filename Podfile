@@ -3,6 +3,8 @@
 
 target 'UBER' do
   use_frameworks!
+  pod 'SwiftyJSON'
+  pod 'Alamofire', '~> 4.4'
   pod 'IQKeyboardManager'
 
 end
