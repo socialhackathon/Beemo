@@ -10,18 +10,52 @@ import UIKit
 
 class SignUpViewController: UIViewController {
     
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var lastNameTextField: UITextField!
+    @IBOutlet weak var phoneNumberTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var passwordRepeatTextField: UITextField!
     @IBOutlet weak var sexTextField: UITextField!
+    let pickerView = UIPickerView()
     
     let sex = ["М" , "Ж"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationController?.navigationBar.topItem?.title = ""
+        self.title = NSLocalizedString("Регистрация", comment: "Регистрация")
         setupPickerView()
     }
     
+    @IBAction func saveButton(_ sender: Any) {
+        var newUser = Login()
+        if phoneNumberTextField.text != "" && passwordTextField.text != "" && passwordRepeatTextField.text != "" && sexTextField.text != "" {
+        
+        if passwordTextField.text! != passwordRepeatTextField.text! {
+            showErrorAlert(message: "Пароли не совпадают!")
+        }
+        else if passwordTextField.text!.count < 4 {
+            showErrorAlert(message: "Пароль должен состоять из 4 и более символов!")
+        }
+        else if (phoneNumberTextField.text?.count)! < 10 {
+            showErrorAlert(message: "Введите правильный номер телефона!")
+            
+        } else {
+            newUser.first_name = self.nameTextField.text!
+            newUser.last_name = self.lastNameTextField.text!
+            newUser.password = self.passwordTextField.text!
+            newUser.phone_number = self.phoneNumberTextField.text!
+            sexTextField.text = newUser.is_male == true ? sex[0] : sex[1]
+            }
+            DataManager.shared.saveUser(username: newUser.phone_number, password: newUser.password)
+            let sb = UIStoryboard(name: "Main", bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: "Main")
+            present(vc, animated: true, completion: nil)
+        } else {
+            showErrorAlert(message: "Fill required data")
+        }
+    }
     func setupPickerView() {
-        let pickerView = UIPickerView()
         pickerView.delegate = self
         sexTextField.inputView = pickerView
         

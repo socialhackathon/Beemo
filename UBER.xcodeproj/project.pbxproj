@@ -21,6 +21,8 @@
 		84161A071F9ADF4E000AFC9E /* HTTPStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84161A061F9ADF4E000AFC9E /* HTTPStatusCode.swift */; };
 		84161A091F9ADF9B000AFC9E /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84161A081F9ADF9B000AFC9E /* ServerManager.swift */; };
 		84161A101F9AECD3000AFC9E /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84161A0F1F9AECD3000AFC9E /* Login.swift */; };
+		84E7D1EF1F9B141D001A6608 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E7D1EE1F9B141D001A6608 /* Alert.swift */; };
+		84E7D1F11F9B1FF1001A6608 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E7D1F01F9B1FF1001A6608 /* DataManager.swift */; };
 		DADBF18E19F3C1DCEB898762 /* Pods_UBER.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DFF8C6E6B6E818A0FBA1665 /* Pods_UBER.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +65,8 @@
 		84161A061F9ADF4E000AFC9E /* HTTPStatusCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPStatusCode.swift; sourceTree = "<group>"; };
 		84161A081F9ADF9B000AFC9E /* ServerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
 		84161A0F1F9AECD3000AFC9E /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		84E7D1EE1F9B141D001A6608 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		84E7D1F01F9B1FF1001A6608 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		B7C68CB4C920EFEF895B3A5D /* Pods-UBER.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UBER.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UBER/Pods-UBER.debug.xcconfig"; sourceTree = "<group>"; };
 		E36DDB8C080F55EC118FB966 /* Pods-UBER.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UBER.release.xcconfig"; path = "Pods/Target Support Files/Pods-UBER/Pods-UBER.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -189,6 +193,8 @@
 				84161A041F9ADF09000AFC9E /* HTTPRequestManager.swift */,
 				84161A061F9ADF4E000AFC9E /* HTTPStatusCode.swift */,
 				84161A081F9ADF9B000AFC9E /* ServerManager.swift */,
+				84E7D1EE1F9B141D001A6608 /* Alert.swift */,
+				84E7D1F01F9B1FF1001A6608 /* DataManager.swift */,
 			);
 			name = "Supporting Files";
 			path = "New Group";
@@ -386,7 +392,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -404,6 +410,8 @@
 				1F98931C1F9AB9E900DBC5CF /* SignUpViewController.swift in Sources */,
 				84161A101F9AECD3000AFC9E /* Login.swift in Sources */,
 				84161A051F9ADF09000AFC9E /* HTTPRequestManager.swift in Sources */,
+				84E7D1F11F9B1FF1001A6608 /* DataManager.swift in Sources */,
+				84E7D1EF1F9B141D001A6608 /* Alert.swift in Sources */,
 				84161A071F9ADF4E000AFC9E /* HTTPStatusCode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

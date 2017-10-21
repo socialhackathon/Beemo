@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class LoginViewController: UIViewController {
     
+    @IBOutlet weak var loginTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.title = "Вход"
         navigationController?.navigationBar.isTranslucent = false
     }
@@ -24,8 +26,24 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func showMain(_ sender: UIButton) {
+        let login = loginTextField.text
+        
+        let password = passwordTextField.text
+        
+        if login != "" && password != "" {
+
+            ServerManager.shared.login(login: login!, password: password!, completion: log_in, error: showErrorAlert)
+        }
+        else {
+            showErrorAlert(message: "Заполните поля!")
+        }
+    }
+    
+    func log_in(user_id: Int) {
+        //HUD.hide()
+        DataManager.shared.saveUser(username: loginTextField.text!, password: passwordTextField.text!)
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "Main")
-        navigationController?.present(vc, animated: true, completion: nil)
+        present(vc, animated: true, completion: nil)
     }
 }

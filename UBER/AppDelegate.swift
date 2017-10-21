@@ -31,6 +31,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().tintColor = UIColor.white
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
         UINavigationBar.appearance().barTintColor = Colors.getDarkBlue()
+        
+        if let _ = DataManager.shared.getUser() {
+            let sb = UIStoryboard(name: "Main", bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: "Main")
+
+              self.window?.rootViewController = vc
+        }
+        
         return true
     }
 

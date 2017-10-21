@@ -9,7 +9,7 @@
 import Foundation
 import SwiftyJSON
 
-struct Login{
+struct Login {
     var phone_number: String
     var first_name: String
     var last_name: String
@@ -44,4 +44,14 @@ class Logins: NSObject {
         }
     }
     
+}
+
+struct User {
+    var username: String
+    var password: String
+    
+    init(username: String, password: String) {
+        self.username = username
+        self.password = password
+    }
 }
