@@ -17,7 +17,7 @@ class HTTPRequestManager {
     typealias FailureHandler = (String)-> Void
     typealias Parameter = [String: Any]?
     
-    let url = "http://104.236.126.14:3000/"
+    let url = "http://165.227.49.83:8000/"
     
     private func request(method: HTTPMethod, api: String, parameters: Parameter, completion: @escaping SuccessHandler, error: @escaping FailureHandler) {
         
@@ -27,12 +27,10 @@ class HTTPRequestManager {
         }
         
         let APIaddress = "\(url)\(api)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
-        var header: HTTPHeaders = [:]
-        if let token = UserDefaults.standard.string(forKey: "token"),
-            let username =  UserDefaults.standard.string(forKey: "username") {
-            header = ["auth" : token, "login": username]
-        }
+        print(APIaddress)
         
+        let header: HTTPHeaders = [:]
+
         Alamofire.request(APIaddress!, method: method, parameters: parameters, encoding: JSONEncoding.default , headers: header).responseJSON { (response:DataResponse<Any>) in
             
             guard response.response != nil else {
