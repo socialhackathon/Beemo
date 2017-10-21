@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F07CF8C1F9B7A3400E76BDD /* ProfileInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F07CF8B1F9B7A3400E76BDD /* ProfileInfoViewController.swift */; };
 		1F6F01F91F9AA43E00A3824C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6F01F81F9AA43E00A3824C /* AppDelegate.swift */; };
 		1F6F01FB1F9AA43E00A3824C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6F01FA1F9AA43E00A3824C /* ViewController.swift */; };
 		1F6F01FE1F9AA43E00A3824C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F6F01FC1F9AA43E00A3824C /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 		1F85EBA31F9AA56000427AE7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F85EBA21F9AA56000427AE7 /* LoginViewController.swift */; };
 		1F85EBA51F9AA75B00427AE7 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F85EBA41F9AA75B00427AE7 /* Colors.swift */; };
 		1F98931C1F9AB9E900DBC5CF /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F98931B1F9AB9E900DBC5CF /* SignUpViewController.swift */; };
+		1FAD463E1F9B8B05009551E4 /* ProfileInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAD463D1F9B8B05009551E4 /* ProfileInfoCollectionViewCell.swift */; };
 		1FBCC1E31F9B15E400BFC105 /* Pods_UBER.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DFF8C6E6B6E818A0FBA1665 /* Pods_UBER.framework */; };
 		1FBCC1E41F9B620200BFC105 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84161A0F1F9AECD3000AFC9E /* Login.swift */; };
 		1FBCC1E51F9B620200BFC105 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E7D1EE1F9B141D001A6608 /* Alert.swift */; };
@@ -46,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1F07CF8B1F9B7A3400E76BDD /* ProfileInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoViewController.swift; sourceTree = "<group>"; };
 		1F6F01F51F9AA43E00A3824C /* UBER.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UBER.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F6F01F81F9AA43E00A3824C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F6F01FA1F9AA43E00A3824C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +65,7 @@
 		1F85EBA21F9AA56000427AE7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1F85EBA41F9AA75B00427AE7 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		1F98931B1F9AB9E900DBC5CF /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		1FAD463D1F9B8B05009551E4 /* ProfileInfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoCollectionViewCell.swift; sourceTree = "<group>"; };
 		1FBCC1E11F9B0ED500BFC105 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		1FBCC1E81F9B664100BFC105 /* GeneralMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralMapViewController.swift; sourceTree = "<group>"; };
 		1FBCC1EB1F9B6F2500BFC105 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +106,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F07CF8A1F9B7A0E00E76BDD /* ProfileInfo */ = {
+			isa = PBXGroup;
+			children = (
+				1F07CF8B1F9B7A3400E76BDD /* ProfileInfoViewController.swift */,
+				1FAD463D1F9B8B05009551E4 /* ProfileInfoCollectionViewCell.swift */,
+			);
+			path = ProfileInfo;
+			sourceTree = "<group>";
+		};
 		1F6F01EC1F9AA43E00A3824C = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +147,7 @@
 				1FBCC1EA1F9B6ED200BFC105 /* Profile */,
 				1FAB61021F9AECE700080C4D /* Map */,
 				1FBCC1E71F9B661100BFC105 /* GeneralMap */,
+				1F07CF8A1F9B7A0E00E76BDD /* ProfileInfo */,
 				1F6F01F81F9AA43E00A3824C /* AppDelegate.swift */,
 				1F6F01FC1F9AA43E00A3824C /* Main.storyboard */,
 				1F6F01FF1F9AA43E00A3824C /* Assets.xcassets */,
@@ -432,6 +446,8 @@
 				84161A091F9ADF9B000AFC9E /* ServerManager.swift in Sources */,
 				1FBCC1E91F9B664100BFC105 /* GeneralMapViewController.swift in Sources */,
 				1F85EBA31F9AA56000427AE7 /* LoginViewController.swift in Sources */,
+				1F07CF8C1F9B7A3400E76BDD /* ProfileInfoViewController.swift in Sources */,
+				1FAD463E1F9B8B05009551E4 /* ProfileInfoCollectionViewCell.swift in Sources */,
 				1F85EBA51F9AA75B00427AE7 /* Colors.swift in Sources */,
 				1F6F01FB1F9AA43E00A3824C /* ViewController.swift in Sources */,
 				1F6F01F91F9AA43E00A3824C /* AppDelegate.swift in Sources */,

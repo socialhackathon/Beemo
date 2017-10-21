@@ -29,12 +29,12 @@ class GeneralMapViewController: UIViewController, GMSMapViewDelegate {
     }
     
     func setupGoogleMap() {
-        let camera = GMSCameraPosition.camera(withLatitude: 42.8706253, longitude: 74.5724552, zoom: 15)
+        let camera = GMSCameraPosition.camera(withLatitude: 42.8706253, longitude: 74.5724552, zoom: 30)
         map = GMSMapView.map(withFrame: self.generalMapView.frame, camera: camera)
         map.delegate = self
         map.settings.myLocationButton = true
         map.isMyLocationEnabled = true
-        map.mapType = .hybrid
+        map.mapType = .terrain
         map.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         view.addSubview(map)
     }

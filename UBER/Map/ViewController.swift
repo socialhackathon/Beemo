@@ -23,6 +23,8 @@ class ViewController: UIViewController, GMSMapViewDelegate {
     var map: GMSMapView!
     var points: [Coordinate] = []
     let timePicker = UIDatePicker()
+    let resetButton = UIButton()
+    let confirmButton = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +37,13 @@ class ViewController: UIViewController, GMSMapViewDelegate {
         setupTimePicker()
         DatePicker()
     }
+    
+    @IBAction func showProfileInfo(_ sender: UIBarButtonItem) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "ProfileInfoViewController") as! ProfileInfoViewController
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
     @IBAction func confirmTime(_ sender: UIButton) {
         hideTimeView()
     }
@@ -44,12 +53,12 @@ class ViewController: UIViewController, GMSMapViewDelegate {
     }
     
     func setupGoogleMap() {
-        let camera = GMSCameraPosition.camera(withLatitude: 42.8706253, longitude: 74.5724552, zoom: 15)
+        let camera = GMSCameraPosition.camera(withLatitude: 42.8706253, longitude: 74.5724552, zoom: 30)
         map = GMSMapView.map(withFrame: self.mapView.frame, camera: camera)
         map.delegate = self
         map.settings.myLocationButton = true
         map.isMyLocationEnabled = true
-        map.mapType = .hybrid
+        map.mapType = .terrain
         map.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         view.addSubview(map)
     }
@@ -80,7 +89,6 @@ class ViewController: UIViewController, GMSMapViewDelegate {
     }
     
     func addResetButton() {
-        let resetButton = UIButton()
         resetButton.frame = CGRect(x: 5, y: view.frame.height - 95, width: 90, height: 40)
         resetButton.setTitle("Отменить", for: .normal)
         resetButton.titleLabel?.font = UIFont.systemFont(ofSize: 13)
@@ -92,7 +100,6 @@ class ViewController: UIViewController, GMSMapViewDelegate {
     }
     
     func addConfirmButton() {
-        let confirmButton = UIButton()
         confirmButton.frame = CGRect(x: 100, y: view.frame.height - 95, width: 110, height: 40)
         confirmButton.setTitle("Подтвердить", for: .normal)
         confirmButton.titleLabel?.font = UIFont.systemFont(ofSize: 13)
@@ -113,8 +120,10 @@ class ViewController: UIViewController, GMSMapViewDelegate {
     }
     
     func showTimeView() {
-        self.view.addSubview(timeView)
+        confirmButton.isHidden = true
+        resetButton.isHidden = true
         
+        self.view.addSubview(timeView)
         timeView.center = CGPoint(x: self.view.bounds.size.width / 2, y: self.view.bounds.size.height)
         timeView.alpha = 0
 
@@ -125,6 +134,8 @@ class ViewController: UIViewController, GMSMapViewDelegate {
     }
     
     func hideTimeView() {
+        confirmButton.isHidden = false
+        resetButton.isHidden = false
         
         UIView.animate(withDuration: 0.3, animations: {
             self.timeView.center = CGPoint(x: self.view.bounds.size.width / 2, y: self.view.bounds.size.height)
