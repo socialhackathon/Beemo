@@ -39,7 +39,7 @@ class LoginViewController: UIViewController {
         }
     }
     
-    func log_in(user_id: Int) {
+    func log_in() {
         //HUD.hide()
         DataManager.shared.saveUser(username: loginTextField.text!, password: passwordTextField.text!)
         let sb = UIStoryboard(name: "Main", bundle: nil)

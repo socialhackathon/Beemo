@@ -45,14 +45,16 @@ class SignUpViewController: UIViewController {
             newUser.last_name = self.lastNameTextField.text!
             newUser.password = self.passwordTextField.text!
             newUser.phone_number = self.phoneNumberTextField.text!
-            sexTextField.text = newUser.is_male == true ? sex[0] : sex[1]
-            }
-            DataManager.shared.saveUser(username: newUser.phone_number, password: newUser.password)
-            let sb = UIStoryboard(name: "Main", bundle: nil)
-            let vc = sb.instantiateViewController(withIdentifier: "Main")
-            present(vc, animated: true, completion: nil)
-        } else {
-            showErrorAlert(message: "Fill required data")
+            newUser.is_male = (sexTextField.text == sex[0]) ? true : false
+            
+            
+            ServerManager.shared.addUser(login: newUser, completion: {
+                DataManager.shared.saveUser(username: newUser.phone_number, password: newUser.password)
+                let sb = UIStoryboard(name: "Main", bundle: nil)
+                let vc = sb.instantiateViewController(withIdentifier: "Main")
+                self.present(vc, animated: true, completion: nil)
+            }, error: showErrorAlert)
+        }
         }
     }
     func setupPickerView() {

@@ -14,7 +14,7 @@ struct Login {
     var first_name: String
     var last_name: String
     var password: String
-    var is_male: Bool?
+    var is_male: Bool = false
     init() {
         phone_number = ""
         first_name = ""
@@ -29,7 +29,7 @@ struct Login {
         password = json["password"].stringValue
     }
     func toDict() -> [String: Any] {
-        return ["phone_number": phone_number, "first_name": first_name, "last_name": last_name, "password": password]
+        return ["phone_number": phone_number, "first_name": first_name, "last_name": last_name, "password": password, "is_male": is_male]
     }
 }
 
