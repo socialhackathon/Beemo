@@ -116,7 +116,12 @@ class ViewController: UIViewController, GMSMapViewDelegate {
     }
     
     @objc func confirmButtonClicked() {
-        showTimeView()
+        
+        if points.count > 1 {
+            showTimeView()
+        } else {
+            showErrorAlert(message: "no line")
+        }
     }
     
     func showTimeView() {
