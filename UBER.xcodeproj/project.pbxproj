@@ -120,8 +120,8 @@
 				84161A031F9ADE7D000AFC9E /* Supporting Files */,
 				1F85EBA61F9AB02100427AE7 /* Login */,
 				1F98931A1F9AB9CC00DBC5CF /* SignUp */,
+				1FAB61021F9AECE700080C4D /* Map */,
 				1F6F01F81F9AA43E00A3824C /* AppDelegate.swift */,
-				1F6F01FA1F9AA43E00A3824C /* ViewController.swift */,
 				1F6F01FC1F9AA43E00A3824C /* Main.storyboard */,
 				1F6F01FF1F9AA43E00A3824C /* Assets.xcassets */,
 				1F6F02011F9AA43E00A3824C /* LaunchScreen.storyboard */,
@@ -162,6 +162,14 @@
 				1F98931B1F9AB9E900DBC5CF /* SignUpViewController.swift */,
 			);
 			path = SignUp;
+			sourceTree = "<group>";
+		};
+		1FAB61021F9AECE700080C4D /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				1F6F01FA1F9AA43E00A3824C /* ViewController.swift */,
+			);
+			path = Map;
 			sourceTree = "<group>";
 		};
 		4B380DC3C34C6854D3EFCF42 /* Frameworks */ = {
@@ -375,7 +383,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

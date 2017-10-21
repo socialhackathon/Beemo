@@ -12,7 +12,6 @@ class SignUpViewController: UIViewController {
     
     @IBOutlet weak var sexTextField: UITextField!
     let sex = ["М" , "Ж"]
-    var selected: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,7 +62,6 @@ extension SignUpViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selected = sex[row]
-        sexTextField.text = selected
+        sexTextField.text = sex[row]
     }
 }
