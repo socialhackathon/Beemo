@@ -17,6 +17,8 @@ class ProfileViewController: UIViewController {
     }
 
     @IBAction func logoutButton(_ sender: Any) {
-        
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "Login")
+        present(vc, animated: true, completion: nil)
     }
 }
