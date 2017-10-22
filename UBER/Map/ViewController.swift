@@ -25,15 +25,20 @@ class ViewController: UIViewController, GMSMapViewDelegate {
     let timePicker = UIDatePicker()
     let resetButton = UIButton()
     let confirmButton = UIButton()
+    var infoLbl = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        resetButton.isHidden = true
+        confirmButton.isHidden = true
         
         self.title = "Карта"
         setupGoogleMap()
         addResetButton()
         addConfirmButton()
         setupTimePicker()
+        setupInfoLbl()
         DatePicker()
     }
     
@@ -179,5 +184,12 @@ class ViewController: UIViewController, GMSMapViewDelegate {
         dateFormatter.dateFormat = "hh:mm"
         timeTF.text = dateFormatter.string(from: timePicker.date)
     }
+    
+    func setupInfoLbl() {
+        infoLbl = UILabel(frame: CGRect(x: self.view.frame.size.width / 2 - 50, y: 70, width: 100, height: 20))
+        infoLbl.textAlignment = .center
+        infoLbl.backgroundColor = .white
+        infoLbl.text = "Press"
+        view.addSubview(infoLbl)
+    }
 }
-
