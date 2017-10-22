@@ -10,12 +10,14 @@ import Foundation
 import SwiftyJSON
 
 struct Login {
+    var id : Int
     var phone_number: String
     var first_name: String
     var last_name: String
     var password: String
     var is_male: Bool = false
     init() {
+        id = 0
         phone_number = ""
         first_name = ""
         last_name = ""
@@ -23,8 +25,9 @@ struct Login {
     }
     
     init(json: JSON) {
+        id = json["id"].intValue
         phone_number = json["phone_number"].stringValue
-        first_name = json["first_number"].stringValue
+        first_name = json["first_name"].stringValue
         last_name = json["last_name"].stringValue
         password = json["password"].stringValue
     }
@@ -48,10 +51,12 @@ class Logins: NSObject {
 }
 
 struct User {
+    var userid: Int
     var username: String
     var password: String
     
-    init(username: String, password: String) {
+    init(userid: Int, username: String, password: String) {
+        self.userid = userid
         self.username = username
         self.password = password
     }
