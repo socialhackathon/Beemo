@@ -26,6 +26,7 @@ class ViewController: UIViewController, GMSMapViewDelegate {
     let resetButton = UIButton()
     let confirmButton = UIButton()
     var infoLbl = UILabel()
+    var markers: [CLLocationCoordinate2D] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +47,12 @@ class ViewController: UIViewController, GMSMapViewDelegate {
     }
     
     @IBAction func confirmTime(_ sender: UIButton) {
-        let order = Order()
+//        let a = Float(markers[0].longitude)
+        
+        
+        let first = "\(Float(markers[0].longitude)), \(Float(markers[0].latitude))"
+        let second = "\(Float(markers[1].longitude)), \(Float(markers[1].latitude))"
+        let order = Order(from: first, to: second)
         ServerManager.shared.addOrder(order: order, completion: {
         }, error: showErrorAlert)
         
@@ -74,6 +80,7 @@ class ViewController: UIViewController, GMSMapViewDelegate {
         marker.icon = UIImage(named: "marker")
         marker.map = map
         setPoint(coordinate)
+        markers.append(coordinate)
     }
     
     func setPoint(_ coordinate: CLLocationCoordinate2D) {
