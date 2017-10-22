@@ -30,7 +30,6 @@ class ViewController: UIViewController, GMSMapViewDelegate {
         super.viewDidLoad()
         
         self.title = "Карта"
-
         setupGoogleMap()
         addResetButton()
         addConfirmButton()
@@ -45,7 +44,7 @@ class ViewController: UIViewController, GMSMapViewDelegate {
     }
     
     @IBAction func confirmTime(_ sender: UIButton) {
-        var order = Order()
+        let order = Order()
         ServerManager.shared.addOrder(order: order, completion: {
         }, error: showErrorAlert)
         
