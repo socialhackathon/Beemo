@@ -78,11 +78,11 @@
                                     <action selector="showRegistration:" destination="lFX-FL-KxO" eventType="touchUpInside" id="5yg-TS-Kil"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="2j2-Fa-w5y">
-                                <rect key="frame" x="87.5" y="94" width="200" height="70"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main" translatesAutoresizingMaskIntoConstraints="NO" id="2j2-Fa-w5y">
+                                <rect key="frame" x="112.5" y="84" width="150" height="150"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="Rk9-jE-BTG"/>
-                                    <constraint firstAttribute="width" constant="200" id="cvX-pZ-vQc"/>
+                                    <constraint firstAttribute="height" constant="150" id="Rk9-jE-BTG"/>
+                                    <constraint firstAttribute="width" constant="150" id="cvX-pZ-vQc"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -99,7 +99,7 @@
                             <constraint firstItem="XDh-wG-1GE" firstAttribute="trailing" secondItem="uQC-jN-Dwv" secondAttribute="trailing" constant="32" id="Pwl-A7-ad1"/>
                             <constraint firstItem="uQC-jN-Dwv" firstAttribute="leading" secondItem="XDh-wG-1GE" secondAttribute="leading" constant="32" id="Tvt-7B-acn"/>
                             <constraint firstItem="XDh-wG-1GE" firstAttribute="trailing" secondItem="Y86-bT-4JK" secondAttribute="trailing" constant="32" id="Uax-Lc-TSL"/>
-                            <constraint firstItem="2j2-Fa-w5y" firstAttribute="top" secondItem="XDh-wG-1GE" secondAttribute="top" constant="30" id="Wf0-2Q-sHR"/>
+                            <constraint firstItem="2j2-Fa-w5y" firstAttribute="top" secondItem="XDh-wG-1GE" secondAttribute="top" constant="20" id="Wf0-2Q-sHR"/>
                             <constraint firstItem="ygt-US-LQw" firstAttribute="top" secondItem="uQC-jN-Dwv" secondAttribute="bottom" constant="8" id="cgB-mD-sS0"/>
                             <constraint firstItem="040-xX-XN2" firstAttribute="leading" secondItem="XDh-wG-1GE" secondAttribute="leading" constant="32" id="hlo-Qk-H7m"/>
                             <constraint firstItem="XDh-wG-1GE" firstAttribute="trailing" secondItem="ygt-US-LQw" secondAttribute="trailing" constant="32" id="iTG-fl-lia"/>
@@ -917,7 +917,7 @@
     <resources>
         <image name="generalMap" width="32" height="32"/>
         <image name="history" width="32" height="32"/>
-        <image name="logo" width="500" height="200"/>
+        <image name="main" width="300" height="300"/>
         <image name="map" width="32" height="32"/>
         <image name="noPhoto" width="256" height="256"/>
         <image name="user" width="32" height="32"/>

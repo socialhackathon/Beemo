@@ -30,16 +30,13 @@ class ViewController: UIViewController, GMSMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        resetButton.isHidden = true
-        confirmButton.isHidden = true
-        
         self.title = "Карта"
         setupGoogleMap()
         addResetButton()
         addConfirmButton()
         setupTimePicker()
-        setupInfoLbl()
         DatePicker()
+        setupInfoLbl()
     }
     
     @IBAction func showProfileInfo(_ sender: UIBarButtonItem) {
@@ -186,10 +183,11 @@ class ViewController: UIViewController, GMSMapViewDelegate {
     }
     
     func setupInfoLbl() {
-        infoLbl = UILabel(frame: CGRect(x: self.view.frame.size.width / 2 - 50, y: 70, width: 100, height: 20))
+        infoLbl = UILabel(frame: CGRect(x: 15, y: 70, width: UIScreen.main.bounds.width - 32, height: 40))
         infoLbl.textAlignment = .center
         infoLbl.backgroundColor = .white
-        infoLbl.text = "Press"
+        infoLbl.numberOfLines = 0
+        infoLbl.text = "зажмите, чтобы поставить маркер"
         view.addSubview(infoLbl)
     }
 }
