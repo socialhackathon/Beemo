@@ -625,13 +625,13 @@
                                                     <rect key="frame" x="4" y="4" width="325" height="169"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Бимо" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qTN-Bo-rnV">
-                                                            <rect key="frame" x="124" y="45" width="43" height="21"/>
+                                                            <rect key="frame" x="124" y="25" width="43" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" red="0.1712183058" green="0.2067141831" blue="0.2690224349" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12/04/17 23:43" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="08E-7l-Nbc">
-                                                            <rect key="frame" x="124" y="74" width="116" height="21"/>
+                                                            <rect key="frame" x="124" y="54" width="116" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" red="0.1712183058" green="0.2067141831" blue="0.2690224349" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -644,7 +644,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Отменен" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zq2-xm-Mcn">
-                                                            <rect key="frame" x="124" y="103" width="72" height="21"/>
+                                                            <rect key="frame" x="124" y="83" width="72" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" red="0.1712183058" green="0.2067141831" blue="0.2690224349" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -653,7 +653,7 @@
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstItem="FZf-FS-8fC" firstAttribute="centerY" secondItem="B9H-Fq-7PA" secondAttribute="centerY" id="A4C-TH-pX0"/>
-                                                        <constraint firstItem="qTN-Bo-rnV" firstAttribute="top" secondItem="B9H-Fq-7PA" secondAttribute="top" constant="45" id="A5t-OR-Kag"/>
+                                                        <constraint firstItem="qTN-Bo-rnV" firstAttribute="top" secondItem="B9H-Fq-7PA" secondAttribute="top" constant="25" id="A5t-OR-Kag"/>
                                                         <constraint firstItem="08E-7l-Nbc" firstAttribute="top" secondItem="qTN-Bo-rnV" secondAttribute="bottom" constant="8" id="EOx-fo-v3g"/>
                                                         <constraint firstItem="08E-7l-Nbc" firstAttribute="leading" secondItem="FZf-FS-8fC" secondAttribute="trailing" constant="16" id="acF-lU-A92"/>
                                                         <constraint firstItem="zq2-xm-Mcn" firstAttribute="leading" secondItem="FZf-FS-8fC" secondAttribute="trailing" constant="16" id="etR-8c-ixm"/>
@@ -696,7 +696,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CAH-99-dhH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3012" y="29.23538230884558"/>
+            <point key="canvasLocation" x="3012" y="30"/>
         </scene>
         <!--General Map View Controller-->
         <scene sceneID="D2j-pU-ZuW">
@@ -809,7 +809,7 @@
         <scene sceneID="6DK-f8-m0t">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AZ1-16-PHe" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Карта заявок" image="menu" id="B3D-Wf-ceO"/>
+                    <tabBarItem key="tabBarItem" title="Карта заявок" image="generalMap" id="B3D-Wf-ceO"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uhi-Sq-mfr">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -826,10 +826,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="generalMap" width="32" height="32"/>
         <image name="history" width="32" height="32"/>
         <image name="logo" width="500" height="200"/>
         <image name="map" width="32" height="32"/>
-        <image name="menu" width="32" height="32"/>
         <image name="noPhoto" width="256" height="256"/>
         <image name="user" width="32" height="32"/>
     </resources>

@@ -31,6 +31,6 @@ extension ProfileInfoViewController: UICollectionViewDelegate, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = UIScreen.main.bounds.size.width - 30
-        return CGSize(width: width, height: 150)
+        return CGSize(width: width, height: 130)
     }
 }
