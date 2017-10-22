@@ -12,8 +12,10 @@ import GooglePlaces
 
 class GeneralMapViewController: UIViewController, GMSMapViewDelegate {
 
+    @IBOutlet var infoView: UIView!
     @IBOutlet weak var generalMapView: UIView!
     var map: GMSMapView!
+    var helpBtn = UIButton()
     var markers = [[42.905465, 74.563014] ,
                    [42.866411, 74.620435] ,
                    [42.856219, 74.597862] ,
@@ -26,6 +28,19 @@ class GeneralMapViewController: UIViewController, GMSMapViewDelegate {
         self.title = "Карта заявок"
         setupGoogleMap()
         setupMarkers()
+    }
+    
+    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        showInfoView()
+        return true
+    }
+    
+    @IBAction func dismissInfoView(_ sender: UIButton) {
+        hideInfoView()
+    }
+    @IBAction func helpBtn(_ sender: Any) {
+        hideInfoView()
+        showSuccessAlert(message: "Success")
     }
     
     func setupGoogleMap() {
@@ -44,6 +59,29 @@ class GeneralMapViewController: UIViewController, GMSMapViewDelegate {
             let marker = GMSMarker(position: CLLocationCoordinate2D(latitude: i[0], longitude: i[1]))
             marker.icon = UIImage(named: "marker")
             marker.map = map
+        }
+    }
+}
+
+extension GeneralMapViewController {
+    
+    func showInfoView() {
+        self.view.addSubview(infoView)
+        infoView.center = CGPoint(x: 0, y: 140)
+        infoView.alpha = 0
+        
+        UIView.animate(withDuration: 0.4) {
+            self.infoView.alpha = 1
+            self.infoView.center = CGPoint(x: self.view.bounds.midX, y: 140)
+        }
+    }
+    
+    func hideInfoView() {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.infoView.center = CGPoint(x: self.view.bounds.size.width, y: 140)
+            self.infoView.alpha = 0
+        }) { (success) in
+            self.infoView.removeFromSuperview()
         }
     }
 }

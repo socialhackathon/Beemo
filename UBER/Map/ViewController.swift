@@ -25,6 +25,7 @@ class ViewController: UIViewController, GMSMapViewDelegate {
     let timePicker = UIDatePicker()
     let resetButton = UIButton()
     let confirmButton = UIButton()
+    var infoLbl = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +36,7 @@ class ViewController: UIViewController, GMSMapViewDelegate {
         addConfirmButton()
         setupTimePicker()
         DatePicker()
+        setupInfoLbl()
     }
     
     @IBAction func showProfileInfo(_ sender: UIBarButtonItem) {
@@ -179,5 +181,13 @@ class ViewController: UIViewController, GMSMapViewDelegate {
         dateFormatter.dateFormat = "hh:mm"
         timeTF.text = dateFormatter.string(from: timePicker.date)
     }
+    
+    func setupInfoLbl() {
+        infoLbl = UILabel(frame: CGRect(x: 15, y: 70, width: UIScreen.main.bounds.width - 32, height: 40))
+        infoLbl.textAlignment = .center
+        infoLbl.backgroundColor = .white
+        infoLbl.numberOfLines = 0
+        infoLbl.text = "зажмите, чтобы поставить маркер"
+        view.addSubview(infoLbl)
+    }
 }
-
