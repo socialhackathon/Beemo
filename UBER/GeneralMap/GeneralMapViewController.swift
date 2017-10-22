@@ -23,7 +23,7 @@ class GeneralMapViewController: UIViewController, GMSMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Общая карта"
+        self.title = "Карта заявок"
         setupGoogleMap()
         setupMarkers()
     }
