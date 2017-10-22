@@ -12,6 +12,7 @@ import GooglePlaces
 
 class GeneralMapViewController: UIViewController, GMSMapViewDelegate {
 
+    @IBOutlet var infoView: UIView!
     @IBOutlet weak var generalMapView: UIView!
     var map: GMSMapView!
     var helpBtn = UIButton()
@@ -27,11 +28,19 @@ class GeneralMapViewController: UIViewController, GMSMapViewDelegate {
         self.title = "Карта заявок"
         setupGoogleMap()
         setupMarkers()
-        setupHelpBtn()
     }
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        showInfoView()
         return true
+    }
+    
+    @IBAction func dismissInfoView(_ sender: UIButton) {
+        hideInfoView()
+    }
+    @IBAction func helpBtn(_ sender: Any) {
+        hideInfoView()
+        showSuccessAlert(message: "Success")
     }
     
     func setupGoogleMap() {
@@ -52,19 +61,27 @@ class GeneralMapViewController: UIViewController, GMSMapViewDelegate {
             marker.map = map
         }
     }
+}
+
+extension GeneralMapViewController {
     
-    func setupHelpBtn() {
-        helpBtn.frame = CGRect(x: view.frame.midX - 55, y: view.frame.height - 95, width: 110, height: 40)
-        helpBtn.setTitle("Помочь", for: .normal)
-        helpBtn.titleLabel?.font = UIFont.systemFont(ofSize: 13)
-        helpBtn.setTitleColor(.white, for: .normal)
-        helpBtn.layer.cornerRadius = 20
-        helpBtn.backgroundColor = Colors.getDarkBlue()
-        helpBtn.addTarget(self, action: #selector(helpBtnClicked), for: .touchUpInside)
-        view.addSubview(helpBtn)
+    func showInfoView() {
+        self.view.addSubview(infoView)
+        infoView.center = CGPoint(x: 0, y: 140)
+        infoView.alpha = 0
+        
+        UIView.animate(withDuration: 0.4) {
+            self.infoView.alpha = 1
+            self.infoView.center = CGPoint(x: self.view.bounds.midX, y: 140)
+        }
     }
     
-    @objc func helpBtnClicked() {
-        
+    func hideInfoView() {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.infoView.center = CGPoint(x: self.view.bounds.size.width, y: 140)
+            self.infoView.alpha = 0
+        }) { (success) in
+            self.infoView.removeFromSuperview()
+        }
     }
 }
