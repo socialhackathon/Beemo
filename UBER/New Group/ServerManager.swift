@@ -13,6 +13,7 @@ import SwiftyJSON
 class ServerManager: HTTPRequestManager  {
     
     var addUser: Login?
+    
     class var shared: ServerManager {
         struct Static {
             static let instance = ServerManager()
@@ -37,13 +38,24 @@ class ServerManager: HTTPRequestManager  {
         
         self.post(api: "login/", parameters: ["username": login, "password": password], completion: { (json) in
             let token = json["token"].stringValue
+            let parameter = ["key": token]
+            self.post(api: "user_id/", parameters: parameter, completion: { (json) in
+                let user_id = json["user_id"].intValue
+                DataManager.shared.saveUserId(id: user_id)
+            }, error: error)
+            
+            
             UserDefaults.standard.set(token, forKey: "token")
             completion()
-            //let parameter = ["key": token]
 
         }, error: error)
-      
     }
-    
-    
+ 
+    func getUser(_ completion: @escaping (Login)-> Void, error: @escaping (String)-> Void) {
+        let id = DataManager.shared.getUserId()
+        self.get(api: "profile/\(id))", completion: { (json) in
+            completion(Login(json: json))
+        }, error: error)
+    }
+
 }

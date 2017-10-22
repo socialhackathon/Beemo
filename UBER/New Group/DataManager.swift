@@ -17,26 +17,27 @@ class DataManager {
         }
         return Static.instance
     }
-     var uDefaults = UserDefaults.standard
+    var uDefaults = UserDefaults.standard
     func saveUser(username: String, password: String) {
         uDefaults.set(username, forKey: "username")
         uDefaults.set(password, forKey: "password")
     }
-    func saveUserInformation(userDictionary: [String: String]){
-        uDefaults.set(userDictionary, forKey: "user_information")
-    }
     
-    func getUserInformation() -> [String: String]? {
-        guard let user_information = uDefaults.object(forKey: "user_information") else {
-            return nil
-        }
-        return user_information as! [String : String]
-    }
     func getUser() -> [String: String]? {
-        guard let username = uDefaults.string(forKey: "username"), let password = uDefaults.string(forKey: "password") else {
+        guard let username = uDefaults.string(forKey: "username"),
+            let password = uDefaults.string(forKey: "password") else {
             return nil
         }
         return ["username": username, "password": password]
     }
+    
+    func getUserId() -> Int {
+        return UserDefaults.standard.integer(forKey: "user_id")
+    }
+    
+    func saveUserId(id: Int) {
+        UserDefaults.standard.set(id, forKey: "user_id")
+    }
+    
 }
 

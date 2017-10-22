@@ -33,4 +33,8 @@ extension ProfileInfoViewController: UICollectionViewDelegate, UICollectionViewD
         let width = UIScreen.main.bounds.size.width - 30
         return CGSize(width: width, height: 130)
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "InfoViewController") as! InfoViewController
+        self.navigationController?.show(vc, sender: self)
+    }
 }
