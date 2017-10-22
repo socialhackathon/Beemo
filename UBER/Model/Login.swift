@@ -28,6 +28,7 @@ struct Login {
         last_name = json["last_name"].stringValue
         password = json["password"].stringValue
     }
+    
     func toDict() -> [String: Any] {
         return ["phone_number": phone_number, "first_name": first_name, "last_name": last_name, "password": password, "is_male": is_male]
     }

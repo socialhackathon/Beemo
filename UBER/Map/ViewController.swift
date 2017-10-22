@@ -45,13 +45,18 @@ class ViewController: UIViewController, GMSMapViewDelegate {
     }
     
     @IBAction func confirmTime(_ sender: UIButton) {
+        var order = Order()
+        ServerManager.shared.addOrder(order: order, completion: {
+        }, error: showErrorAlert)
+        
         hideTimeView()
+        showSuccessAlert(message: "Ваш запрос успешно отправлен!")
     }
     
     @IBAction func dismissTime(_ sender: UIButton) {
         hideTimeView()
     }
-    
+ 
     func setupGoogleMap() {
         let camera = GMSCameraPosition.camera(withLatitude: 42.8706253, longitude: 74.5724552, zoom: 10)
         map = GMSMapView.map(withFrame: self.mapView.frame, camera: camera)
@@ -120,7 +125,7 @@ class ViewController: UIViewController, GMSMapViewDelegate {
         if points.count > 1 {
             showTimeView()
         } else {
-            showErrorAlert(message: "no line")
+            showErrorAlert(message: "Нарисуйте на карте маркер")
         }
     }
     
@@ -160,12 +165,13 @@ class ViewController: UIViewController, GMSMapViewDelegate {
         toolBar.setItems([btn], animated: true)
         
         timePicker.backgroundColor = .white
+        timePicker.datePickerMode = UIDatePickerMode.time
         timeTF.inputAccessoryView = toolBar
         timeTF.inputView = timePicker
     }
     
     @objc func dismissPickerView() {
-        timeTF.text = "\(timePicker.date)"
+        DatePicker()
         view.endEditing(true)
     }
     

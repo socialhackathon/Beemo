@@ -26,10 +26,17 @@ class ServerManager: HTTPRequestManager  {
             }, error: error)
     }
     
+    func addOrder(order: Order, completion: @escaping () -> Void, error: @escaping (String) -> Void) {
+        let param = order.toDict()
+        post(api: "order/", parameters: param, completion: { (json) in
+            print(param)
+        }, error: error)
+    }
+    
     func login(login: String, password: String, completion: @escaping ()-> Void,error: @escaping (String)-> Void) {
         
         self.post(api: "login/", parameters: ["username": login, "password": password], completion: { (json) in
-            var token = json["token"].stringValue
+            let token = json["token"].stringValue
             UserDefaults.standard.set(token, forKey: "token")
             completion()
             //let parameter = ["key": token]
